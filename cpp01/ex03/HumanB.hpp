@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:02:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 23:35:31 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/09/12 19:32:33 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/09/12 19:42:04 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 # include <iostream>
+# include "Weapon.hpp"
 
-class Fixed
+class	HumanB
 {
 	public:
-		Fixed();
-		Fixed(Fixed &src);
-		~Fixed();
-		int getRawBits(void);
-		void setRawBits(int const raw);
-		Fixed &operator =(Fixed &src);
+		HumanB(std::string name);
+		~HumanB();
+		void	attack();
+		void	setWeapon(Weapon type);
 	private:
-		int	nb;
-		static const int fbits;
+		std::string	_name;
+		Weapon	*_type;
 };
 
 #endif

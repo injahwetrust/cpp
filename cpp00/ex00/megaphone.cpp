@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:02:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 23:35:31 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/08/24 10:18:05 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/08/24 10:38:02 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include <iostream>
 
-# include <iostream>
-
-class Fixed
+int	main(int ac, char **av)
 {
-	public:
-		Fixed();
-		Fixed(Fixed &src);
-		~Fixed();
-		int getRawBits(void);
-		void setRawBits(int const raw);
-		Fixed &operator =(Fixed &src);
-	private:
-		int	nb;
-		static const int fbits;
-};
+	std::string	str;
+	int	i;
+	int	j;
 
-#endif
+	if (ac == 1)
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
+	i = 1;
+	while (i < ac)
+	{
+		j = 0;
+		str = av[i];
+		while (str[j])
+		{
+			str[j] = std::toupper(str[j]);
+			j++;
+		}
+		std::cout << str;
+		i++;
+	}
+	std::cout << std::endl;
+	return (0);
+}

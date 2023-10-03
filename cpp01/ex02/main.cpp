@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:02:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 23:35:31 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/09/08 13:41:17 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/09/08 13:51:03 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include <iostream>
+#include <string>
 
-# include <iostream>
-
-class Fixed
+int	main()
 {
-	public:
-		Fixed();
-		Fixed(Fixed &src);
-		~Fixed();
-		int getRawBits(void);
-		void setRawBits(int const raw);
-		Fixed &operator =(Fixed &src);
-	private:
-		int	nb;
-		static const int fbits;
-};
+	std::string str("HI THIS IS BRAIN");
+	std::string *stringPTR = &str;
+	std::string	&stringREF = str;
 
-#endif
+	std::cout << &str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+
+	return (0);
+}

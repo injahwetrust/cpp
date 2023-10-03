@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:02:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 23:35:31 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/09/08 13:16:44 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/09/08 13:19:56 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-
-class Fixed
+void randomChump(std::string name)
 {
-	public:
-		Fixed();
-		Fixed(Fixed &src);
-		~Fixed();
-		int getRawBits(void);
-		void setRawBits(int const raw);
-		Fixed &operator =(Fixed &src);
-	private:
-		int	nb;
-		static const int fbits;
-};
-
-#endif
+	Zombie	z(name);
+	z.announce();
+}

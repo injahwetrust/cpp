@@ -5,39 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/28 16:48:33 by bvaujour          #+#    #+#              #
-#    Updated: 2023/09/28 23:23:04 by bvaujour         ###   ########.fr        #
+#    Created: 2023/09/08 11:46:18 by bvaujour          #+#    #+#              #
+#    Updated: 2023/09/08 15:33:18 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= fixed
+INCLUDES = HumanA.hpp Weapon.hpp
 
-SRC		= Fixed.cpp main.cpp
+SRC = main.cpp HumanA.cpp Weapon.cpp
 
-OBJ		= $(SRC:.cpp=.o)
+NAME = freeViolence
 
-DEP		= $(OBJ:.o=.d)
+OBJ = $(SRC:.cpp=.o)
 
-FLAGS	= -std=c++98 -Wall -Wextra -Werror -MMD
+FLAGS = -std=c++98 -Wall -Werror -Wextra
 
-CC		= c++
+CC = c++
 
-all: $(NAME)
-
-%.o:%.cpp
+%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
-	 
-$(NAME): $(OBJ) Makefile
+
+all		: $(NAME)
+
+$(NAME)	: $(INLUDES) $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-clean:
-	rm -rf $(OBJ) $(DEP)
+clean	:
+	rm -rf $(OBJ)
 
-fclean: clean
+fclean	: clean
 	rm -rf $(NAME)
 
-re: fclean all
-
--include $(DEP)
+re	: fclean all
 
 .PHONY: all clean fclean re

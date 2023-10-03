@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:17:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 22:27:49 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:29:26 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,10 @@ void	Harl::complain(std::string level)
 	{
 		case 0:
 			Harl::debug();
-			Harl::info();
-			Harl::warning();
-			Harl::error();
-			break ;
 		case 1:
 			Harl::info();
-			Harl::warning();
-			Harl::error();
-			break ;
 		case 2:
 			Harl::warning();
-			Harl::error();
-			break ;
 		case 3:
 			Harl::error();
 			break ;
