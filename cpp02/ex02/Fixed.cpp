@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:02:31 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/09 16:03:27 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:18:42 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,77 @@ std::ostream &operator<<(std::ostream &o, const Fixed &src)
 {
 	o << src.toFloat();
 	return (o);
+}
+
+bool	Fixed::operator >(const Fixed &src) const
+{
+	if (nb > src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator >=(const Fixed &src) const
+{
+	if (nb >= src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator <(const Fixed &src) const
+{
+	if (nb < src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator <=(const Fixed &src) const
+{
+	if (nb <= src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator ==(const Fixed &src) const
+{
+	if (nb == src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator !=(const Fixed &src) const
+{
+	if (nb != src.getRawBits())
+		return (true);
+	return (false);
+}
+
+Fixed	Fixed::operator +(const Fixed &src)
+{
+	Fixed	a(toFloat() + src.toFloat());
+	
+	return (a);
+}
+
+Fixed	Fixed::operator -(const Fixed &src)
+{
+	
+	Fixed	a(toFloat() - src.toFloat());
+	
+	return (a);
+}
+
+Fixed	Fixed::operator *(const Fixed &src)
+{
+	
+	Fixed	a(toFloat() * src.toFloat());
+	
+	return (a);
+}
+
+Fixed	Fixed::operator /(const Fixed &src)
+{
+	
+	Fixed	a(toFloat() / src.toFloat());
+	
+	return (a);
 }

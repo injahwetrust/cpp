@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:02:04 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/05 16:44:14 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:59:56 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main()
 {
 	// std::string str("lol2");
-	// ClapTrap a("lol1");
+	ClapTrap a("lol1");
 	// ClapTrap b(str);
 
 	// int i(0);
@@ -32,8 +32,11 @@ int	main()
 	// 	i++;
 	// }
 	// ScavTrap	h("lol");
-	ScavTrap	p;
+	//ScavTrap	p;
+	ScavTrap	p2;
+
+	a = p2;
 	// p = h;
-	p.attack("lol");
+	a.attack("lol");
 	return (0);
 }

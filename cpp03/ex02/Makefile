@@ -6,19 +6,19 @@
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 14:02:20 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/09 10:53:18 by bvaujour         ###   ########.fr        #
+#    Updated: 2023/10/09 10:53:47 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= scav
+NAME		= frag
 
-FILES		= main.cpp ClapTrap.cpp ScavTrap.cpp
+FILES		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ			= $(FILES:.cpp=.o)
 
 DEP		= $(OBJ:.o=.d)
 
-INCLUDES	= ClapTrap.hpp ScavTrap.hpp
+INCLUDES	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 CC			= c++
 

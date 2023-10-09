@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:33:03 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/09 11:30:38 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:47:07 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ void	ScavTrap::guardGate()
 	if (_hp > 0)
 		std::cout << "ScavTrap " << _name << " said Hodor !" << std::endl;
 	else
-		std::cout << "ScavTrap " << _name << "can't enter Guard mode while dead" << std::endl;
+		std::cout << "ScavTrap " << _name << "can't enter Guard mode will dead" << std::endl;
 }
 

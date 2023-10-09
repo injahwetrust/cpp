@@ -5,30 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/03 14:02:20 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/09 10:53:18 by bvaujour         ###   ########.fr        #
+#    Created: 2023/09/28 16:48:33 by bvaujour          #+#    #+#              #
+#    Updated: 2023/09/28 23:23:04 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= scav
+NAME	= fixed
 
-FILES		= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC		= Fixed.cpp main.cpp
 
-OBJ			= $(FILES:.cpp=.o)
+OBJ		= $(SRC:.cpp=.o)
 
 DEP		= $(OBJ:.o=.d)
 
-INCLUDES	= ClapTrap.hpp ScavTrap.hpp
+FLAGS	= -std=c++98 -Wall -Wextra -Werror -MMD
 
-CC			= c++
-
-FLAGS		= -std=c++98 -Wall -Werror -Wextra -MMD
+CC		= c++
 
 all: $(NAME)
 
-%.o:%.cpp $(INCLUDES)
+%.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $@
-
+	 
 $(NAME): $(OBJ) Makefile
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 

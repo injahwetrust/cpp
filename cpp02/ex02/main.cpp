@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:02:39 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/09 15:08:28 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:21:36 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 int main( void ) 
 {
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	Fixed a(15.3f);
+	Fixed b(12.3f);
+	Fixed c(15.3f);
+
+	if (a > b)
+		std::cout << "a > b" << std::endl;
+	if (b < a)
+		std::cout << "b < a" << std::endl;
+	if (a >= b)
+		std::cout << "a >= b" << std::endl;
+	if (b <= a)
+		std::cout << "b <= a" << std::endl;
+	if (b != a)
+		std::cout << "b != a" << std::endl;
+	if (c == a)
+		std::cout << "b == a" << std::endl;
+	std::cout << "b + a = " << b + a << std::endl;
+	std::cout << "b - a = " << b - a << std::endl;
+	std::cout << "b * a = " << b * a << std::endl;
+	std::cout << "b / a = " << b / a << std::endl;
 	return 0;
 }

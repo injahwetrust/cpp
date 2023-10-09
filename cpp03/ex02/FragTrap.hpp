@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:12:03 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/03 14:06:12 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/09 10:55:34 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/09 11:36:29 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main()
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	PhoneBook	rep;
-	std::string	input;
-
-	while (input != "EXIT")
-	{
-		std::cout << "(ADD/SEARCH/EXIT): ";
-		if (!std::getline(std::cin, input))
-		{
-			std::cout << "\nstd::cin closed. PhoneBook OFF" << std::endl;
-			break ;
-		}
-		if (input == "ADD")
-			rep.add();
-		else if (input == "SEARCH")
-			rep.search();
-	}
-	return (0);
-}
+	public:
+		FragTrap();
+		~FragTrap();
+		FragTrap(const std::string &name);
+		FragTrap(FragTrap &src);
+		void	highFivesGuys();
+};
+#endif

@@ -5,31 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:12:03 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/03 14:06:12 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/03 14:02:04 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/09 11:38:32 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main()
 {
-	PhoneBook	rep;
-	std::string	input;
+	// std::string str("lol2");
+	//ClapTrap a("lol1");
+	// ClapTrap b(str);
 
-	while (input != "EXIT")
-	{
-		std::cout << "(ADD/SEARCH/EXIT): ";
-		if (!std::getline(std::cin, input))
-		{
-			std::cout << "\nstd::cin closed. PhoneBook OFF" << std::endl;
-			break ;
-		}
-		if (input == "ADD")
-			rep.add();
-		else if (input == "SEARCH")
-			rep.search();
-	}
+	// int i(0);
+	// a.displayStats();
+	// b.displayStats();
+	// while (i < 10)
+	// {
+	// 	a.attack("herl");
+	// 	b.takeDamage(a.getAd());
+	// 	b.beRepaired(10);
+	// 	a.displayStats();
+	// 	b.displayStats();
+	// 	i++;
+	// }
+	// ScavTrap	h("lol");
+	//ScavTrap	p;
+	//ScavTrap	p2;
+
+	//a = p2;
+	// p = h;
+	//a.attack("lol");
+	FragTrap	d;
+	d.highFivesGuys();
 	return (0);
 }

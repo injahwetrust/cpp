@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:12:03 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/03 14:06:12 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/05 15:30:05 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/05 16:47:26 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main()
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	PhoneBook	rep;
-	std::string	input;
-
-	while (input != "EXIT")
-	{
-		std::cout << "(ADD/SEARCH/EXIT): ";
-		if (!std::getline(std::cin, input))
-		{
-			std::cout << "\nstd::cin closed. PhoneBook OFF" << std::endl;
-			break ;
-		}
-		if (input == "ADD")
-			rep.add();
-		else if (input == "SEARCH")
-			rep.search();
-	}
-	return (0);
-}
+	public:
+		ScavTrap();
+		~ScavTrap();
+		ScavTrap(const std::string &name);
+		ScavTrap(ScavTrap &src);
+		void	guardGate();
+};
+#endif
