@@ -6,19 +6,19 @@
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 14:02:20 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/10 15:59:47 by bvaujour         ###   ########.fr        #
+#    Updated: 2023/10/10 16:04:52 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= frag
+NAME		= diamond
 
-FILES		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+FILES		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ			= $(FILES:.cpp=.o)
 
 DEP			= $(OBJ:.o=.d)
 
-INCLUDES	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+INCLUDES	= DiamondTrap.hpp
 
 CC			= c++
 
