@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:02:49 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 23:35:31 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:26:11 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed
 		Fixed();
 		Fixed(Fixed &src);
 		~Fixed();
-		int getRawBits(void);
+		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		Fixed &operator =(Fixed &src);
 	private:

@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:02:31 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/10 11:38:33 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:43:46 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,28 +180,28 @@ Fixed&	Fixed::operator --(void)
 
 Fixed&	Fixed::min(Fixed &src1, Fixed &src2)
 {
-	if (src1 < src2)
+	if (src1.getRawBits() < src2.getRawBits())
 		return (src1);
-	return (src2);
+	return (src1);
 }
 
 Fixed&	Fixed::max(Fixed &src1, Fixed &src2)
 {
-	if (src1 > src2)
+	if (src1.getRawBits() > src2.getRawBits())
 		return (src1);
-	return (src2);
+	return (src1);
 }
 
 Fixed	Fixed::min(const Fixed &src1, const Fixed &src2)
 {
-	if (src1 < src2)
+	if (src1.getRawBits() < src2.getRawBits())
 		return (src1);
-	return (src2);
+	return (src1);
 }
 
 Fixed	Fixed::max(const Fixed &src1, const Fixed &src2)
 {
-	if (src1 > src2)
+	if (src1.getRawBits() > src2.getRawBits())
 		return (src1);
-	return (src2);
+	return (src1);
 }

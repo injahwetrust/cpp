@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:02:31 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/09 16:03:27 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:30:35 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void Fixed::setRawBits(int const raw)
 {
 	nb = raw;
 }
+
 
 int Fixed::toInt(void) const
 {
