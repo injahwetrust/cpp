@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 14:06:06 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 12:31:07 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/17 14:50:08 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/17 17:52:35 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-class	Cat : public Animal
+int	main()
 {
-	public:
-						Cat();
-						Cat(const Cat &toCpy);
-						~Cat();
-		void			makeSound() const;
-		Brain*			getBrain() const;
-		Cat&			operator=(const Cat &toCpy);
-	private:
-		Brain*			_brain;
-};
-
-#endif
+	Ice a;
+	Ice *b = a.clone();
+	Ice c(a);
+	Cure d;
+	a = c;
+	Character e("me");
+	
+	e.equip(&a);
+	e.use(0, e);
+	delete b;
+	return (0);
+}

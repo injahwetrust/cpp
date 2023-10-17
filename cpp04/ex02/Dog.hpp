@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 14:06:06 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 12:31:07 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/13 13:14:53 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/16 14:46:31 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class	Cat : public Animal
+class	Dog : public Animal
 {
 	public:
-						Cat();
-						Cat(const Cat &toCpy);
-						~Cat();
+						Dog();
+						Dog(const Dog &toCpy);
+						~Dog();
 		void			makeSound() const;
 		Brain*			getBrain() const;
-		Cat&			operator=(const Cat &toCpy);
+		Dog&			operator=(const Dog &toCpy);
 	private:
 		Brain*			_brain;
 };

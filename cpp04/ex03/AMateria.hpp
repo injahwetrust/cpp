@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 14:06:06 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 12:31:07 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/17 14:47:58 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/17 17:38:36 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+#pragma once
 
-class	Cat : public Animal
+# include <iostream>
+
+class ICharacter;
+
+class AMateria
 {
+	protected:
+		std::string	_type;
 	public:
-						Cat();
-						Cat(const Cat &toCpy);
-						~Cat();
-		void			makeSound() const;
-		Brain*			getBrain() const;
-		Cat&			operator=(const Cat &toCpy);
-	private:
-		Brain*			_brain;
+		AMateria();
+		AMateria(std::string const & type);
+		virtual	~AMateria();
+		AMateria&	operator=(const AMateria& toCpy);
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
 
-#endif

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 14:06:06 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 12:31:07 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/17 16:38:37 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/17 18:10:19 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#pragma once
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "ICharacter.hpp"
 
-class	Cat : public Animal
+class Character : public ICharacter
 {
-	public:
-						Cat();
-						Cat(const Cat &toCpy);
-						~Cat();
-		void			makeSound() const;
-		Brain*			getBrain() const;
-		Cat&			operator=(const Cat &toCpy);
 	private:
-		Brain*			_brain;
+		AMateria	*_slots[4];
+		std::string _name;
+	public:
+		std::string const& getName() const;
+		Character(const std::string& name);
+		Character(const Character& toCpy);
+		// Character&	operator=(const Character& toCpy);
+		~Character();
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
-
-#endif

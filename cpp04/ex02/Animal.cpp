@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:35:20 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 14:08:56 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:11:05 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,4 @@ std::string	Animal::getType() const
 void	Animal::setType(const std::string& newType)
 {
 	_type = newType;
-}
-
-void	Animal::makeSound() const
-{
-	std::cout << "Animal sound" << std::endl;
 }
