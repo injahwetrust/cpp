@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:12:52 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/28 17:40:28 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:06:40 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ class Harl
 	public:
 		Harl();
 		~Harl();
-		void	complain(std::string level);
+		void	complain(const std::string& level);
 	private:
 		void	info();
 		void	debug();
 		void	warning();
 		void	error();
+		void	unknown();
 };
 
 #endif

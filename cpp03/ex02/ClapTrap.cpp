@@ -45,7 +45,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator =(const ClapTrap &src)
 {
-	std::cout << _class << " overrided Operator = used" << std::endl;
+	std::cout << _class << " overloaded Operator = used" << std::endl;
 	if (this != &src)
 	{
 		_name = src.getName();

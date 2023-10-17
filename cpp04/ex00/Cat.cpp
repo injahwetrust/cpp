@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 13:54:29 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/10 12:07:15 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/13 14:08:48 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/13 14:27:55 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Cat.hpp"
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
-
-class Weapon
+Cat::Cat()
 {
-	public:
-		Weapon();
-		Weapon(const std::string name);
-		~Weapon();
-		void				setType(const std::string name);
-		const std::string&	getType() const;
-	private:
-		std::string 		_type;
-};
+	std::cout << "Cat default constructor called" << std::endl;
+	_type = "Cat";
+}
 
-#endif
+Cat::~Cat()
+{
+	std::cout << "Cat default destructor called" << std::endl;
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "Pssssschit" << std::endl;
+}

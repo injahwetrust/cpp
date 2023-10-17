@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 13:54:29 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/10 12:07:15 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/13 13:19:44 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/13 14:27:51 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Dog.hpp"
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
-
-class Weapon
+Dog::Dog()
 {
-	public:
-		Weapon();
-		Weapon(const std::string name);
-		~Weapon();
-		void				setType(const std::string name);
-		const std::string&	getType() const;
-	private:
-		std::string 		_type;
-};
+	std::cout << "Dog default constructor called" << std::endl;
+	_type = "Dog";
+}
 
-#endif
+Dog::~Dog()
+{
+	std::cout << "Dog default destructor called" << std::endl;
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << "grrrrrr" << std::endl;
+}

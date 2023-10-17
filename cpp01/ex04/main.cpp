@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:54:31 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/13 13:19:07 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:32:07 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ void	find_and_replace(std::string& ligne, std::string tofind, std::string torepl
 {
 	int	pos;
 
-	std::cout << ligne << std::endl;
 	pos = ligne.find(tofind);
 	ligne.erase(pos, tofind.length());
 	ligne.insert(pos, toreplace);
 	
 }
+
 int main(int ac, char **av)
 {
 	std::string		ligne;
 	std::string		outfileName;
 	std::ifstream	infile;
 	std::ofstream	outfile;
-	int				pos;
+	size_t			pos;
 
 	if (ac != 4)
 	{
@@ -58,7 +58,6 @@ int main(int ac, char **av)
 		{
 			find_and_replace(ligne, av[2], av[3]);
 			pos = ligne.find(av[2]);
-			std::cout << ligne << std::endl;
 		}
 		outfile << ligne << std::endl;
 	}

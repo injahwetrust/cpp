@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:32:33 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/09/12 19:42:04 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:11:06 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class	HumanB
 {
 	public:
-		HumanB(std::string name);
+		HumanB(const std::string name);
 		~HumanB();
-		void	attack();
-		void	setWeapon(Weapon type);
+		void	attack() const;
+		void	setWeapon(Weapon& type);
 	private:
 		std::string	_name;
-		Weapon	*_type;
+		Weapon			*_type;
 };
 
 #endif

@@ -5,40 +5,42 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/08 11:46:18 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/10 14:12:44 by bvaujour         ###   ########.fr        #
+#    Created: 2023/10/13 12:18:19 by bvaujour          #+#    #+#              #
+#    Updated: 2023/10/13 14:11:06 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-INCLUDES = HumanA.hpp HumanB.cpp Weapon.hpp
+NAME		= polymorphisme
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC			= main.cpp Animal.cpp Dog.cpp Cat.cpp
 
-NAME = freeViolence
+INCLUDES	= Animal.hpp Dog.hpp Cat.hpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ			= $(SRC:.cpp=.o)
 
-DEP	= $(OBJ:.o=.d)
+DEP			= $(OBJ:.o=.d)
 
-FLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
+CC			= c++
 
-CC = c++
+FLAGS		= -Wall -Werror -Wextra -std=c++98 -MMD
 
-%.o: %.cpp $(INLUDES) Makefile
+
+
+all: $(NAME)
+	
+%.o:%.cpp Makefile
 	$(CC) $(FLAGS) -c $< -o $@
 
-all		: $(NAME)
-
-$(NAME)	: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-
-clean	:
+	
+clean:
 	rm -rf $(OBJ) $(DEP)
-
-fclean	: clean
+	
+fclean: clean
 	rm -rf $(NAME)
 
-re	: fclean all
+re: fclean all
 
 -include $(DEP)
 

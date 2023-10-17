@@ -5,41 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/08 11:46:18 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/10 14:12:44 by bvaujour         ###   ########.fr        #
+#    Created: 2023/10/10 14:14:10 by bvaujour          #+#    #+#              #
+#    Updated: 2023/10/10 14:24:00 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-INCLUDES = HumanA.hpp HumanB.cpp Weapon.hpp
+NAME	= sedIsForLosers
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC		= main.cpp
 
-NAME = freeViolence
+OBJ		= $(SRC:.cpp=.o)
 
-OBJ = $(SRC:.cpp=.o)
+CC		= c++
 
-DEP	= $(OBJ:.o=.d)
+FLAGS	= -Wall -Werror -Wextra -std=c++98
 
-FLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
-
-CC = c++
-
-%.o: %.cpp $(INLUDES) Makefile
+%.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
-all		: $(NAME)
+all: $(NAME)
 
-$(NAME)	: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-clean	:
-	rm -rf $(OBJ) $(DEP)
+clean:
+	rm -rf $(OBJ)
 
-fclean	: clean
+fclean: clean
 	rm -rf $(NAME)
 
-re	: fclean all
-
--include $(DEP)
+re: fclean all
 
 .PHONY: all clean fclean re

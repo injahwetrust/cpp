@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 13:54:29 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/10 12:07:15 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/13 15:07:29 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/16 14:33:34 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+# include <iostream>
 
-class Weapon
+class	Brain
 {
 	public:
-		Weapon();
-		Weapon(const std::string name);
-		~Weapon();
-		void				setType(const std::string name);
-		const std::string&	getType() const;
+		Brain();
+		Brain(Brain& toCpy);
+		~Brain();
+		Brain&	operator=(const Brain& toCpy);
+		std::string* getIdeas();
+		void	showIdeas();
+		void	setIdeas(std::string idea);
 	private:
-		std::string 		_type;
+		std::string	*_ideas;
 };
 
 #endif
