@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:35:33 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 17:44:32 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:49:27 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Cure::Cure()
 {
-	_type = "Cure";
+	_type = "cure";
 	std::cout << "Cure default constructor called" << std::endl;
 }
 
@@ -23,13 +23,6 @@ Cure::~Cure()
 {
 	std::cout << "Cure default destructor called" << std::endl;
 }
-
-Cure::Cure(const Cure& toCpy)
-{
-	std::cout << "Cure copy constructor called" << std::endl;
-	*this = toCpy;
-}
-
 
 Cure*	Cure::clone() const
 {
@@ -40,5 +33,5 @@ Cure*	Cure::clone() const
 
 void	Cure::use(ICharacter& target)
 {
-	std::cout << " heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 14:59:13 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/18 19:46:21 by bvaujour         ###   ########.fr       */
+/*   Created: 2023/10/18 13:28:49 by bvaujour          #+#    #+#             */
+/*   Updated: 2023/10/18 18:15:30 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "ICharacter.hpp"
+#pragma once
 
-Ice::Ice()
-{
-	_type = "ice";
-	std::cout << "Ice default constructor called" << std::endl;
-}
+# include "IMateriaSource.hpp"
 
-Ice::~Ice()
+class MateriaSource : public IMateriaSource
 {
-	std::cout << "Ice default destructor called" << std::endl;
-}
-
-Ice*	Ice::clone() const
-{
-	return (new Ice());
-}
-
-void	Ice::use(ICharacter& target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-}
+	public:
+		MateriaSource();
+		~MateriaSource();
+		MateriaSource(const MateriaSource& toCpy);
+		MateriaSource&	operator=(const MateriaSource& toCpy);
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
+	private:
+		AMateria	*_learned[4];
+};

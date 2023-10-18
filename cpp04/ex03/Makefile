@@ -6,15 +6,15 @@
 #    By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 15:12:47 by bvaujour          #+#    #+#              #
-#    Updated: 2023/10/17 16:59:10 by bvaujour         ###   ########.fr        #
+#    Updated: 2023/10/18 16:41:47 by bvaujour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= FFVII
 
-SRC			= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
+SRC			= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
-INCLUDES	= AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp
+INCLUDES	= AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp MateriaSource.hpp IMateriaSource.hpp
 
 OBJ			= $(SRC:.cpp=.o)
 
@@ -22,7 +22,7 @@ DEP			= $(OBJ:.o=.d)
 
 CC			= c++
 
-FLAGS		= -Wall -Werror -Wextra -std=c++98 -MMD
+FLAGS		= -std=c++98 -Wall -Werror -Wextra -MMD
 
 all: $(NAME)
 

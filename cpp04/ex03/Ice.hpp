@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:02:15 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 17:39:21 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:46:26 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Ice : public AMateria
 	public:
 		Ice();
 		~Ice();
-		Ice(const Ice& toCpy);
 		Ice*	clone() const;
 		void	use(ICharacter& target);
 };

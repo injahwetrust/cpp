@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:51:19 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/17 17:47:39 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:44:51 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ AMateria::AMateria(std::string const &type) : _type(type)
 {
 	std::cout << "AMateria type constructor called" << std::endl;
 }
-
+AMateria::AMateria(const AMateria& toCpy)
+{
+	*this = toCpy;
+}
 AMateria::~AMateria()
 {
 	std::cout << "AMateria default destructor called" << std::endl;
