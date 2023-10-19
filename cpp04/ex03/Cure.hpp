@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:31:43 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/18 19:46:33 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:46:25 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ class Cure : public AMateria
 		~Cure();
 		Cure*	clone() const;
 		void	use(ICharacter& target);
+		void	printInfos();
 };

@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:58 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/18 19:48:31 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:44:00 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ class AMateria
 {
 	protected:
 		std::string	_type;
+		int	_deltaHp;
+		int	_level;
+		int	_xp;
 	public:
 		AMateria();
 		AMateria(std::string const & type);
@@ -32,4 +35,5 @@ class AMateria
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
+		virtual void printInfos(void);
 };

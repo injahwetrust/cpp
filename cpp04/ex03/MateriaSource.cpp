@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:45:07 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/18 19:54:08 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/19 10:58:38 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,11 @@ void	MateriaSource::learnMateria(AMateria *toSave)
 		return ;
 	while (i < 4)
 	{
+		if (_learned[i] == toSave)
+		{
+			std::cout << "MateriaSource already stocked this address" << std::endl;
+			return ;
+		}
 		if (_learned[i] == NULL)
 		{
 			_learned[i] = toSave;
@@ -101,6 +106,8 @@ void	MateriaSource::learnMateria(AMateria *toSave)
 		i++;
 	}
 	std::cout << "Materia source has no more slot" << std::endl;
+	delete toSave;
+	toSave = NULL;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

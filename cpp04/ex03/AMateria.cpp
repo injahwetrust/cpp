@@ -6,7 +6,7 @@
 /*   By: bvaujour <bvaujour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:51:19 by bvaujour          #+#    #+#             */
-/*   Updated: 2023/10/18 19:44:51 by bvaujour         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:43:46 by bvaujour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ AMateria&	AMateria::operator=(const AMateria& toCpy)
 {
 	std::cout << "AMateria operator = called" << std::endl;
 	_type = toCpy._type;
+	_deltaHp = toCpy._deltaHp;
+	_level = toCpy._level;
+	_xp = toCpy._xp;
 	return (*this);
 }
 std::string const &AMateria::getType() const
@@ -44,4 +47,9 @@ std::string const &AMateria::getType() const
 void	AMateria::use(ICharacter& target)
 {
 	(void) target;
+}
+
+void	AMateria::printInfos(void)
+{
+
 }
